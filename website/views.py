@@ -17,10 +17,26 @@ def cadastro_empresa(request):
         empresa.cnpj = request.POST.get('cnpj')
         empresa.senha = request.POST.get('senha')
         empresa.save()
-        print("empresa: ", empresa)
         return render(request, 'login.html')
 
     return render(request, 'cadastro_empresa.html')
 
 def cadastro_candidato(request):
+    if request.method == 'POST':
+        candidato = Candidato()
+        candidato.nome = request.POST.get('nome')
+        candidato.sobrenome = request.POST.get('sobrenome')
+        candidato.rne = request.POST.get('rne')
+        candidato.pais_de_origem = request.POST.get('pais_de_origem')
+        candidato.data_nascimento = request.POST.get('data_nascimento')
+        candidato.genero = request.POST.get('genero')
+        candidato.senha = request.POST.get('senha')
+        candidato.email = request.POST.get('email')
+        candidato.telefone = request.POST.get('telefone')
+        candidato.celular = request.POST.get('celular')
+        candidato.apresentacao = request.POST.get('apresentacao')
+        candidato.area = request.POST.get('area')
+        candidato.area_outros = request.POST.get('area_outros')
+        candidato.save()
+        return render(request, 'login.html')
     return render(request, 'cadastro_candidato.html')
