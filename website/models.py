@@ -11,14 +11,14 @@ class Candidato(models.Model):
     )
 
     AREAS = (
-        ('Comunicação', 'Comunicação'),
-        ('Saúde', 'Saúde'),
-        ('Tecnologia', 'Tecnologia'),
-        ('Financeiro', 'Financeiro'),
-        ('Administração', 'Administração'),
+        ('CMC', 'Comunicação'),
+        ('SD', 'Saúde'),
+        ('TEC', 'Tecnologia'),
+        ('FIN', 'Financeiro'),
+        ('ADM', 'Administração'),
         ('RH', 'RH'),
-        ('Jurídica', 'Jurídica'),
-        ('Outro', 'Outro')
+        ('JUR', 'Jurídica'),
+        ('OTR', 'Outro')
     )
 
     nome = models.CharField(

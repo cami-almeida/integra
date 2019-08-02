@@ -1,4 +1,78 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
-<h1>Cadastro Candidato</h1>
+<form action="/cadastro_candidato" method="POST">
+    {% csrf_token %}
+    
+    <div class="Nome">
+    <label>Nome</label>
+    <input type="text" name="nome" required>
+    </div>
+    
+    <div class="Sobrenome">
+        <label>Sobrenome</label>
+        <input type="text" name="Sobrenome" required>
+    </div>
+    
+    
+    <div class="pais_de_origem">
+        <label>Pais de Origem</label>
+        <input type="text" name="pais_de_origem">
+    </div>
+    
+    <div class="genero">
+        <label>Genero</label>
+        <select name="genero">
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="O">Outros</option>
+        </select>
+    </div>
+    
+    <div class="email">
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+    </div>
+
+
+    <div class="senha">
+        <label>Senha</label>
+        <input type="password" name="senha" required>
+    </div> 
+
+    <div class="telefone">
+        <label>Telefone</label>
+        <input type="text" name="telefone">
+    </div>
+
+    <div class="celular">
+        <label>Celular</label>
+        <input type="text" name="celular">
+    </div>
+
+    <div class="area">
+        <label>Area</label>
+        <select name="area">
+            <option value="CMD">Comunicação</option>
+            <option value="SD">Saúde</option>
+            <option value="TEC">Tecnologia</option>
+            <option value="FIN">Financeiro</option>
+            <option value="ADM">Adminstração</option>
+            <option value="RH">Recursos Humanos</option>
+            <option value="JUR">Jurídica</option>
+            <option value="OTR">Outro</option>
+        </select>
+
+    </div>
+
+    <div class="area_outros">
+        <label>Outros</label>
+        <input type="text" name="area_outros">
+    </div>
+    <div class="apresentacao">
+        <label>Apresentacao</label>
+        <input type="text">
+    </div>
+    
+    <input type="submit" value="Cadastrar">
+</form>
 {% endblock %}
