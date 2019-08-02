@@ -1,4 +1,20 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
 <h1>Cadastro Empresa</h1>
+    <form action="/cadastro_empresa" method="POST">
+    {% csrf_token %}
+    <div class="razao_social">
+    <label>Razão Social</label>
+    <input type="text" name="razao_social" required>
+    </div>
+    <div class="cnpj">
+        <label>CNPJ</label>
+        <input type="text" name="cnpj" required>
+    </div>
+    <div class="senha">
+        <label>Senha</label>
+        <input type="password" name="senha" required>
+        </div>   
+        <input type="submit" value="Cadastrar">
+    </form>
 {% endblock %}
