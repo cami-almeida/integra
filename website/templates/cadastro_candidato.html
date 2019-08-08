@@ -1,5 +1,8 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
+
+<h1>Preencha aqui seu cadastro</h1>
+
 <form action="/cadastro_candidato" method="POST">
     {% csrf_token %}
     

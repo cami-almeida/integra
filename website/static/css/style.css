@@ -1,0 +1,12 @@
+body{
+    margin:0px;
+    background-color: #F0F2F2;
+    color: #232226;
+}
+
+.formulario{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+

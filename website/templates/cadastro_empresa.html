@@ -1,21 +1,24 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
 <h1>Cadastro Empresa</h1>
-    <form action="/cadastro_empresa" method="POST">
+
+    <form class ='Formulario' action="/cadastro_empresa" method="POST">
     {% csrf_token %}
     <div class="razao_social">
     <label for="razao_social">Razão Social</label>
     <input type="text" name="razao_social" id="razao_social" required>
     </div>
+
     <div class="cnpj">
         <label for="cnpj">CNPJ</label>
         <input type="text" name="cnpj" maxlength="12" required id="cnpj">
     </div>
+
     <div class="senha">
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" maxlength="255" minlength="5" required>
         </div>   
         <input type="submit" value="Cadastrar">
-    
+
     </form>
 {% endblock %}
