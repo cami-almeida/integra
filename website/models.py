@@ -21,6 +21,21 @@ class Candidato(models.Model):
         ('OTR', 'Outro')
     )
 
+    ESCOLARIDADE = (
+        ('EFI', 'Ensino Fundamental Incompleto'),
+        ('EFC', 'Ensino Fundamental Cursando'),
+        ('EFCO', 'Ensino Fundamental Completo'),
+        ('EMI', 'Ensino Médio Incompleto'),
+        ('EMC', 'Ensino Médio Cursando'),
+        ('EMCO', 'Ensino Médio Completo'),
+        ('ESI', 'Ensino Superior Incompleto'),
+        ('ESC', 'Ensino Superior Cursando'),
+        ('ESCO', 'Ensino Superior Completo'),
+        ('P', 'Pós Graduação'),
+        ('M', 'Mestrado'),
+        ('D', 'Doutorado')
+    )
+
     nome = models.CharField(
         max_length=255,
         verbose_name='Nome'
@@ -101,6 +116,14 @@ class Candidato(models.Model):
         verbose_name="Histórico Profissional",
         blank=True
     )
+
+    escolaridade = models.CharField(
+        verbose_name = 'Escolaridade',
+        choices = ESCOLARIDADE,
+        max_length=255,
+        default='SOME STRING'
+    )
+
 
     data_de_criacao = models.DateField(auto_now=True)
     ativo = models.BooleanField(default=True)

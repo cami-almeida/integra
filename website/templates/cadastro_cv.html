@@ -5,15 +5,32 @@
 
 <form action="/cadastro_cv" method="POST">
     {% csrf_token %}
-    <div class="Formacao">
+    <div class="escolaridade">
+        <label>Nível de Escolaridade</label>
+        <select name="escolaridade">
+            <option value="EFI">Ensino Fundamental Incompleto</option>
+            <option value="EFC">Ensino Fundamental Cursando</option>
+            <option value="EFCO">Ensino Fundamental Completo</option>
+            <option value="EMI">Ensino Médio Incompleto</option>
+            <option value="EMC">Ensino Médio Cursando</option>
+            <option value="EMCO">Ensino Médio Completo</option>
+            <option value="ESI">Ensino Superior Incompleto</option>
+            <option value="ESC">Ensino Superior Cursando</option>
+            <option value="ESCO">Ensino Superior Completo</option>
+            <option value="P">Pós Graduação</option>
+            <option value="M">Mestrado</option>
+            <option value="D">Doutorado</option>
+        </select>
+    </div>
+    <div class="formacao">
         <label>Formação Acadêmica</label>
         <textarea name="formacao" cols="30" rows="10"></textarea>
     </div>
-    <div class="Idioma">
+    <div class="idioma">
         <label>Idiomas</label>
         <textarea name="idioma" cols="30" rows="10"></textarea>
     </div>
-    <div class="Historico">
+    <div class="historico">
         <label>Histórico Profissional</label>
         <textarea name="historico" cols="30" rows="10"></textarea>
     </div>
