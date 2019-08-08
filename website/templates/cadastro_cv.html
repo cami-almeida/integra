@@ -1,0 +1,25 @@
+{% extends 'shared/layout.html' %}
+{% block conteudo %}
+
+<h1>Preencha aqui seu currículo</h1>
+
+<form action="/cadastro_cv" method="POST">
+    {% csrf_token %}
+    <div class="Apresentacao">
+        <label>Apresentação</label>
+        <textarea name="apresentacao" cols="30" rows="10"></textarea>
+    </div>
+    <div class="Formacao">
+        <label>Formação Acadêmica</label>
+        <textarea name="formacao" cols="30" rows="10"></textarea>
+    </div>
+    <div class="Idioma">
+        <label>Idiomas</label>
+        <textarea name="idioma" cols="30" rows="10"></textarea>
+    </div>
+    <div class="Historico">
+        <label>Histórico Profissional</label>
+        <textarea name="historico" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="Salvar">
+{% endblock %}
