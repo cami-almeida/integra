@@ -2,6 +2,12 @@ body{
     margin:0px;
     background-color: #F0F2F2;
     color: #232226;
+    display: grid;
+    grid-template-areas: 'header header header header'
+                        'imagem imagem texto texto'
+                         'conteudo conteudo conteudo conteudo'
+                        'footer footer footer footer';
+    grid-template-rows: 5vw 45vw 45vw 8vw;
 }
 
 .formulario{
@@ -10,3 +16,27 @@ body{
     justify-content: space-around;
 }
 
+.conteudo {
+    grid-area: conteudo;
+    display: flex;
+    align-items: center;
+}
+
+.texto{
+grid-area: texto;
+display: flex;
+align-items: center;
+}
+
+header{
+    grid-area: header;
+    background-color: #BFB8AA;
+    display: flex;
+}
+
+footer{
+    grid-area: footer;
+    background-color:#BFB8AA;
+    display: flex;
+    align-items: center;
+}
