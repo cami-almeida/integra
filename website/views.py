@@ -38,9 +38,16 @@ def cadastro_candidato(request):
         candidato.area = request.POST.get('area')
         candidato.area_outros = request.POST.get('area_outros')
         candidato.save()
-        return render(request, 'login.html')
+        return render(request, 'cadastro_cv.html')
     return render(request, 'cadastro_candidato.html')
 
 
 def cadastro_cv(request):
+    if request.method == 'POST':
+        candidato = Candidato()
+        candidato.formacao = request.POST.get('formacao')
+        candidato.idioma = request.POST.get('idioma')
+        candidato.historico = request.POST.get('historico')
+        candidato.save()
+        return render(request, 'index.html')
     return render(request, 'cadastro_cv.html')

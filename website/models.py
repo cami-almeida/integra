@@ -87,6 +87,21 @@ class Candidato(models.Model):
         verbose_name = 'Caso outra, qual?'
     )
 
+    formacao = models.TextField(
+        verbose_name="Formação",
+        blank=True
+    )
+
+    idioma = models.TextField(
+        verbose_name= "Idioma",
+        blank=True
+    )
+
+    historico = models.TextField(
+        verbose_name="Histórico Profissional",
+        blank=True
+    )
+
     data_de_criacao = models.DateField(auto_now=True)
     ativo = models.BooleanField(default=True)
 
