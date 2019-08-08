@@ -40,3 +40,7 @@ def cadastro_candidato(request):
         candidato.save()
         return render(request, 'login.html')
     return render(request, 'cadastro_candidato.html')
+
+
+def cadastro_cv(request):
+    return render(request, 'cadastro_cv.html')
