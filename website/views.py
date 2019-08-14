@@ -8,7 +8,37 @@ def index(request):
 
 
 def login(request):
+    # função para deixar dois logins em uma unica index
+    contexto = {}
+    # verifica se o metodo é POST
+    if request.method == 'POST':
+        # verifica se o botão de login clicado pertence ao formulario de usuario
+        if request.POST.get('submit') == 'login_candidato':
+            # pega as informações do candidato apartir dos dados informados no formulario
+            email_candidato = request.POST.get('email_candidato')
+            candidato = Candidato.objects.filter(email=email_candidato).first()
+            # caso os dados forem invalidos/não existirem devolve uma mensagem de erro
+            if candidato is None:
+                contexto = {'msg' : 'login ou senha incorreto'}
+            # caso tudo estiver correto redirecionaria para pagina em que o candidato altera suas informações
+            # pagina inexistente
+            else:
+                contexto = {'candidato' : candidato}
+                return render(request,'index.html',contexto)
+
+
+        # verifica se o botão de login clicado pertence ao formulario de empresa
+        elif request.POST.get('submit') == 'login_empresa':
+            email_empresa = request.POST.get('email_empresa')
+            empresa = Empresa.objects.filter(email=email_empresa).first()
+            if candidato is None:
+                contexto = {'msg' : 'login ou senha incorreto'}
+            else:
+                contexto = {'empresa' : empresa}
+                return render(request, 'cadastro_cv.html', contexto)
     return render(request, 'login.html')
+
+
 
 def cadastro_empresa(request):
     if request.method == 'POST':
