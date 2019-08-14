@@ -3,9 +3,9 @@ body{
     background-color: #F0F2F2;
     color: #232226;
     display: grid;
-    grid-template-areas: 'header header header header'
+    grid-template-areas:'header header header header'
                         'imagem imagem texto texto'
-                         'conteudo conteudo conteudo conteudo'
+                        'conteudo conteudo conteudo conteudo'
                         'footer footer footer footer';
     grid-template-rows: 5vw 45vw 45vw 8vw;
 }
@@ -39,4 +39,36 @@ footer{
     background-color:#BFB8AA;
     display: flex;
     align-items: center;
+}
+
+
+
+/* CSS LOGIN */
+
+.login{
+    display: grid;
+    grid-template-areas: 'usertab emptab'
+                         'forms forms';
+    grid-template-rows: 50px 300px;
+}
+
+.aba_candidato , .aba_empresa{
+    display: flex;
+    flex-direction: column;
+}
+
+.opcao_empresa{
+    grid-area: emptab;
+}
+
+.opcao_candidato{
+    grid-area: usertab;
+}
+
+.forms{
+    grid-area: forms;
+}
+
+.aba_empresa{
+    display: none;
 }

@@ -1,36 +1,54 @@
 {% extends 'shared/layout.html' %}
+
 {% block conteudo %}
-
-<div>
-
-    <h1>Login</h1>
-    <p>{{msg}}</p>
-
-</div>
-
-<form action = "/login "method = "POST">
-    {% csrf_token%}
-
-    <label> Email </label >
-    <input type = "E-mail"name ="email_candidato">
-
-    <label> Senha </label >
-    <input type ="password "name ="senha">
-
-    <input type ="submit" name = "submit" value="login_candidato">
-</form >
-
-
-<form action="/login" method="POST">
-    {% csrf_token%}
-
-    <label> Email </label >
-        <input type = "E-mail" name ="email_empresa">
+<!-- Div para deixar as opções de login com display grid -->
+<div class="login">
     
-        <label> Senha </label >
-        <input type ="password "name ="senha">
+    <!-- div para quando o usuario clicar tornar o formulario de candidato visivel -->
+    <div class="opcao_candidato">
+        <h2>login candidato</h2>
+    </div>
+
+    <!-- div para quando o usuario clicar tornar o formulario de empresa visivel -->
+
+    <div class="opcao_empresa">
+        <h2>login empresa</h2>    
+    </div>
+
+    <!-- Div criada para fazer ambos os formularios ocuparem o espaço inferior total da div login -->
+    <div class="forms">
+
+        <!-- formulario de login do candidato -->
+        <form action = "/login "method = "POST" class="aba_candidato">
+            {% csrf_token%}
+                
+            <label> Email </label >
+            <input type = "E-mail"name ="email_candidato">
+                    
+            <label> Senha </label >
+            <input type ="password "name ="senha">
+
+            <input type ="submit" name = "submit" value="login_candidato">
+        </form >
+
+        <!-- formulario de login da empresa -->
+        <form action="/login" method="POST" class="aba_empresa">
+            {% csrf_token%}
+
+            <label> Email </label >
+            <input type = "E-mail" name ="email_empresa">
+
+            <label> Senha </label >
+            <input type ="password "name ="senha">
+
+            <input type ="submit" name = "submit" value="login_empresa">
+        </form>
     
-        <input type ="submit" name = "submit" value="login_empresa">
-</form>
+    <!--fim da div forms -->
+    </div>
+
+<!-- fim da div login -->
+</div>                    
+
 
 {% endblock %}

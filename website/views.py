@@ -19,11 +19,11 @@ def login(request):
             candidato = Candidato.objects.filter(email=email_candidato).first()
             # caso os dados forem invalidos/não existirem devolve uma mensagem de erro
             if candidato is None:
-                contexto = {'msg' : 'login ou senha incorreto'}
+                contexto = {'msg':'login ou senha incorreto'}
             # caso tudo estiver correto redirecionaria para pagina em que o candidato altera suas informações
             # pagina inexistente
             else:
-                contexto = {'candidato' : candidato}
+                contexto = {'candidato':candidato}
                 return render(request,'index.html',contexto)
 
 
@@ -32,11 +32,11 @@ def login(request):
             email_empresa = request.POST.get('email_empresa')
             empresa = Empresa.objects.filter(email=email_empresa).first()
             if candidato is None:
-                contexto = {'msg' : 'login ou senha incorreto'}
+                contexto = {'msg':'login ou senha incorreto'}
             else:
-                contexto = {'empresa' : empresa}
+                contexto = {'empresa':empresa}
                 return render(request, 'cadastro_cv.html', contexto)
-    return render(request, 'login.html')
+    return render(request, 'login.html',contexto)
 
 
 
