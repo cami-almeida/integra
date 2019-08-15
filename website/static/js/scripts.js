@@ -9,7 +9,6 @@ function trocarLogins1(){
     loginuser.style.display = 'none';
     loginemp.style.display = 'flex';
 }
-usertab.onclick = trocarLogins1
 
 // função para que ao usuario clicar na div opcao_empresa o formulario correspondente ficar visivel
 
@@ -17,5 +16,7 @@ function trocarLogins2(){
     loginuser.style.display = 'flex';
     loginemp.style.display = 'none';
 }
-emptab.onclick = trocarLogins2
 
+
+emptab.onclick = trocarLogins1
+usertab.onclick = trocarLogins2

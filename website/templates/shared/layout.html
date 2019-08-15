@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script  defer src="{% static 'js/scripts.js' %}"></script>
+    
     <title>Integra+</title>
 </head>
 <body>
 <header>
-    <p>acesse aqui</p>
+    <a href="/login">Login</a>
 </header>
     <main>
         {% block conteudo %}
@@ -22,7 +24,7 @@
             <img src="{% static 'image/logoInsta.png' %}"height="40" width="40">
     </footer>
 
-    <script src="{% static 'js/scripts.js' %}"></script>
+   
     
 </body>
 </html>
