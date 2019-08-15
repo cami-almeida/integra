@@ -81,3 +81,13 @@ def cadastro_cv(request):
         candidato.save()
         return render(request, 'index.html')
     return render(request, 'cadastro_cv.html')
+
+
+def placeholder(request):
+
+    candidatos = Candidato.objects.filter(ativo=True).all()
+    contexto = {
+        'candidatos':candidatos
+    }
+
+    return render(request, 'placeholder.html',contexto)

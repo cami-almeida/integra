@@ -1,0 +1,17 @@
+{% extends 'shared/layout.html' %}
+
+
+{% block conteudo %}
+
+    <section>
+        {% for candidato in candidatos %}
+        <div>
+            <p>{{candidato.nome}} {{candidato.sobrenome}}</p>
+            <p>{{candidato.apresentacao}}</p>
+        </div>
+
+        {% endfor %}
+    </section>
+
+
+{% endblock %}

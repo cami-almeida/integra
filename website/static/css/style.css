@@ -1,16 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Css Layout */
 body{
     margin:0px;
     background-color: #F0F2F2;
     color: #232226;
     display: grid;
     grid-template-areas:'header header header header'
-                        'imagem imagem texto texto'
-                        'conteudo conteudo conteudo conteudo'
+                        'main main main main'
                         'footer footer footer footer';
-    grid-template-rows: 5vw 45vw 45vw 8vw;
+    grid-template-rows: 5vw auto 8vw;
 }
 
-.formulario{
+
+main{
+    grid-area: main;
+    width: 100%;
+    height: auto;
+}
+
+footer{
+    grid-area: footer;
+    background-color:#BFB8AA;
+    display: flex;
+    align-items: center;
+}
+
+/* Fim CSS Layout */
+
+/* .formulario{
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -32,14 +52,8 @@ header{
     grid-area: header;
     background-color: #BFB8AA;
     display: flex;
-}
+} */
 
-footer{
-    grid-area: footer;
-    background-color:#BFB8AA;
-    display: flex;
-    align-items: center;
-}
 
 
 
