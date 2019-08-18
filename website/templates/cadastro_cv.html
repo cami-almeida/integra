@@ -1,9 +1,14 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
+{% if candidato is None %}
+    <h1>Ops, você precisa se cadastrar</h1>
+    <p>
+        <a href="/">clique aqui para se cadastrar</a>
+    </p>
+{% else %}
+<h1>Preencha aqui seu currículo {{candidato.nome}}</h1>
 
-<h1>Preencha aqui seu currículo</h1>
-
-<form action="/cadastro_cv" method="POST">
+<form action="/atualizar_cv" method="POST">
     {% csrf_token %}
     <div class="area">
         <label>Area</label>
@@ -57,5 +62,6 @@
         <label>Histórico Profissional</label>
         <textarea name="historico" cols="30" rows="10"></textarea>
     </div>
-    <input type="submit" value="Salvar">
+    <a href="/atualizar_cv/{{candidato.id}}"><input type="button" value="Cadastrar"></a>
+{% endif %}
 {% endblock %}

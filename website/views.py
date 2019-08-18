@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from website.models import Empresa, Candidato
 
 # Create your views here.
@@ -65,28 +66,33 @@ def cadastro_candidato(request):
         candidato.email = request.POST.get('email')
         candidato.telefone = request.POST.get('telefone')
         candidato.celular = request.POST.get('celular')
-        candidato.apresentacao = request.POST.get('apresentacao')
-        candidato.area = request.POST.get('area')
-        candidato.area_outros = request.POST.get('area_outros')
         candidato.save()
         return render(request, 'login.html')
     return render(request, 'cadastro_candidato.html')
 
 
 def cadastro_cv(request):
-    if request.method == 'POST':
-        candidato = Candidato()
-        candidato.formacao = request.POST.get('formacao')
-        candidato.idioma = request.POST.get('idioma')
-        candidato.historico = request.POST.get('historico')
-        candidato.save()
-        return render(request, 'index.html')
-    return render(request, 'cadastro_cv.html')
+        candidato = Candidato.objects.filter(id=id)
+        contexto = {'candidato': candidato}
+        return render(request, 'cadastro_cv.html')
 
+def atualizar_cv(request, id):    
+        candidato = Candidato.objects.filter(id=id)        
+        if candidato is not None:
+            if request.method == 'POST':
+                    candidato.apresentacao = request.POST.get('apresentacao')
+                    candidato.area = request.POST.get('area')
+                    candidato.area_outros = request.POST.get('area_outros')
+                    candidato.formacao = request.POST.get('formacao')
+                    candidato.idioma = request.POST.get('idioma')
+                    candidato.historico = request.POST.get('historico')
+                    candidato.save()
+                    return redirect('/cadastro_cv')
+        return render(request, 'index.html')
 
 def pagina_candidato(request):
-    # candidatos = Candidato.objects.filter(ativo=True).all()
-    # contexto = {"candidatos":candidatos}
+    candidatos = Candidato.objects.filter(ativo=True).all()
+    contexto = {"candidatos":candidatos}
     return render(request, 'pagina_candidato.html',contexto)
 
 # view para retornar lista de candidatos
