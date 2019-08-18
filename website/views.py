@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from website.models import Empresa, Candidato
 
 # Create your views here.
@@ -85,12 +85,18 @@ def cadastro_cv(request):
 
 
 def pagina_candidato(request):
-    candidatos = Candidato.objects.filter(ativo=True).all()
-    contexto = {"candidatos":candidatos}
+    # candidatos = Candidato.objects.filter(ativo=True).all()
+    # contexto = {"candidatos":candidatos}
     return render(request, 'pagina_candidato.html',contexto)
 
-
+# view para retornar lista de candidatos
 def pagina_empresa(request):
     candidatos = Candidato.objects.filter(ativo=True).all()
     contexto = {"candidatos":candidatos}
     return render(request, 'pagina_empresa.html', contexto)
+
+# view para retornar informações do candidato
+def informacao_candidato(request, id):
+    candidato = get_object_or_404(Candidato, id=id)
+    contexto = {'candidato':candidato}
+    return render(request, 'informacao_candidato.html', contexto)

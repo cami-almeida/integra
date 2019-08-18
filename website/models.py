@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -124,12 +125,17 @@ class Candidato(models.Model):
         default='SOME STRING'
     )
 
+    # slug = models.SlugField(max_length=100)
 
     data_de_criacao = models.DateField(auto_now=True)
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nome + '' + self.sobrenome
+
+    def get_absolute_url(self):
+        
+        return reverse('candid  atos:candidato', kwargs={'id': self.id})
 
 class Empresa(models.Model):
     razao_social = models.CharField(
@@ -141,7 +147,7 @@ class Empresa(models.Model):
         max_length=255,
         verbose_name='E-mail'
     )
-    
+
     cnpj = models.CharField(
         max_length = 14,
         verbose_name = 'CNPJ'

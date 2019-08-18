@@ -23,7 +23,8 @@
             
             
             <div class="info_candidato">
-                <p>{{candidato.nome}} {{candidato.sobrenome}}</p>
+                <a href="{{ candidato.get_absolute_url}}">{{candidato.nome}} </a>
+                <p>{{candidato.sobrenome}}</p>
                 <p>{{candidato.pais_de_origem}}</p>
                 {% if candidato.apresentacao is not None %}
                 
