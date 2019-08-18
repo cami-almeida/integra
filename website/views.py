@@ -34,11 +34,11 @@ def login(request):
             email_empresa = request.POST.get('email_empresa')
             senha_empresa = request.POST.get('senha')
             empresa = Empresa.objects.filter(email=email_empresa).first()
-            if candidato is None:
+            if empresa is None:
                 contexto = {'msg':'login ou senha incorreto'}
             else:
                 contexto = {'empresa':empresa}
-                return render(request, 'cadastro_cv.html', contexto)
+                return render(request, 'pagina_empresa.html', contexto)
     return render(request, 'login.html',contexto)
 
 
