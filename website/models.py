@@ -77,12 +77,14 @@ class Candidato(models.Model):
 
     telefone = models.CharField(
         max_length=10,
-        verbose_name='Telefone'
+        verbose_name='Telefone',
+        null= True
     )
 
     celular = models.CharField(
         max_length=11,
-        verbose_name='Celular'
+        verbose_name='Celular',
+        null= True
     )
 
     apresentacao = models.TextField(
@@ -93,7 +95,8 @@ class Candidato(models.Model):
     area = models.CharField(
         verbose_name = 'Áreas',
         choices = AREAS,
-        max_length=255
+        max_length=255,
+        null= True
     )
 
     area_outros = models.CharField(
@@ -131,7 +134,7 @@ class Candidato(models.Model):
     ativo = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.nome + '' + self.sobrenome
+        return self.nome + ' ' + self.sobrenome
 
     def get_absolute_url(self):
         
