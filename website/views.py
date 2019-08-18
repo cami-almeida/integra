@@ -17,7 +17,8 @@ def login(request):
         if request.POST.get('submit') == 'login_candidato':
             # pega as informações do candidato apartir dos dados informados no formulario
             email_candidato = request.POST.get('email_candidato')
-            candidato = Candidato.objects.filter(email=email_candidato).first()
+            senha_candidato = request.POST.get('senha')
+            candidato = Candidato.objects.filter(email=email_candidato, senha=senha_candidato).first()
             # caso os dados forem invalidos/não existirem devolve uma mensagem de erro
             if candidato is None:
                 contexto = {'msg':'login ou senha incorreto'}
@@ -31,6 +32,7 @@ def login(request):
         # verifica se o botão de login clicado pertence ao formulario de empresa
         elif request.POST.get('submit') == 'login_empresa':
             email_empresa = request.POST.get('email_empresa')
+            senha_empresa = request.POST.get('senha')
             empresa = Empresa.objects.filter(email=email_empresa).first()
             if candidato is None:
                 contexto = {'msg':'login ou senha incorreto'}
