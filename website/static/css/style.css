@@ -116,3 +116,7 @@ header{
 }
 
 /* fim css pagina_empresa */
+
+.area_outros{
+    display: none;
+}

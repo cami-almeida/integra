@@ -12,7 +12,7 @@
     {% csrf_token %}
     <div class="area">
         <label>Area</label>
-        <select name="area">
+        <select name="area" id="opcoesarea" onchange="optionCheck()">
             <option value="CMD">Comunicação</option>
             <option value="SD">Saúde</option>
             <option value="TEC">Tecnologia</option>
