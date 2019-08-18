@@ -1,4 +1,42 @@
-{% comment %} 
-    lista com todos os candidatos ativos
-    
-{% endcomment %}
+{% extends 'shared/layout.html' %}
+{% load static%}
+{% block conteudo %}
+<div class="pagina_empresa">
+    <div class="carrosel">
+
+    </div>
+
+
+    <div class="lista_candidatos">
+        <!-- for usado para percorrer a lista de candidatos e criaar uma div de usuario para cada candidato existente -->
+        {% for candidato in candidatos %}
+        <div class="bloco_candidato">
+
+            <!-- if usado pra dependendo do genero do usuario uma foto diferente sera usada  -->
+            {% if candidato.genero == 'F' %}
+            <img src="{% static 'image/iconFeminino.png' %}" class="iconeCandidato">
+            {% elif candidato.genero == 'M' %}
+            <img src="{% static 'image/iconMasculino.png' %}" class="iconeCandidato">
+            {% else %}
+            <img src="{% static 'image/iconOutros.png' %}" class="iconeCandidato">
+            {% endif %}
+            
+            
+            <div class="info_candidato">
+                <p>{{candidato.nome}} {{candidato.sobrenome}}</p>
+                <p>{{candidato.pais_de_origem}}</p>
+                {% if candidato.apresentacao is not None %}
+                
+                <p>{{candidato.apresentacao}}</p>
+                {% else %}
+                <p></p>
+                {% endif %}
+            </div>
+        </div>
+            
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

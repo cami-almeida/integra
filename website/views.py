@@ -46,6 +46,7 @@ def cadastro_empresa(request):
         empresa.razao_social = request.POST.get('razao_social')
         empresa.cnpj = request.POST.get('cnpj')
         empresa.senha = request.POST.get('senha')
+        empresa.email = request.POST.get('email')
         empresa.save()
         return render(request, 'login.html')
 
@@ -84,5 +85,12 @@ def cadastro_cv(request):
 
 
 def pagina_candidato(request):
-    contexto = {}
+    candidatos = Candidato.objects.filter(ativo=True).all()
+    contexto = {"candidatos":candidatos}
     return render(request, 'pagina_candidato.html',contexto)
+
+
+def pagina_empresa(request):
+    candidatos = Candidato.objects.filter(ativo=True).all()
+    contexto = {"candidatos":candidatos}
+    return render(request, 'pagina_empresa.html', contexto)

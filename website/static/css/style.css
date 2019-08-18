@@ -86,3 +86,33 @@ header{
 .aba_empresa{
     display: none;
 }
+/* fim css login */
+
+
+
+/* css pagina_empresa */
+
+.lista_candidatos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bloco_candidato{
+    display: flex;
+    flex-direction: row;
+}
+.iconeCandidato{
+    height: 150px;
+    width: 150px;
+}
+.carrosel{
+    height: 25vh;
+}
+.bloco_candidato{
+    width: 30vw;
+    border: 2px solid red;
+    margin: 1%;
+}
+
+/* fim css pagina_empresa */

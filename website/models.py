@@ -137,6 +137,11 @@ class Empresa(models.Model):
         verbose_name = 'Razão Social'
     )
 
+    email = models.EmailField(
+        max_length=255,
+        verbose_name='E-mail'
+    )
+    
     cnpj = models.CharField(
         max_length = 14,
         verbose_name = 'CNPJ'
