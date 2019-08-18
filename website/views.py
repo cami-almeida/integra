@@ -24,7 +24,7 @@ def login(request):
             # pagina inexistente
             else:
                 contexto = {'candidato':candidato}
-                return render(request,'index.html',contexto)
+                return render(request,'cadastro_cv.html',contexto)
 
 
         # verifica se o botão de login clicado pertence ao formulario de empresa
@@ -69,7 +69,7 @@ def cadastro_candidato(request):
         candidato.area = request.POST.get('area')
         candidato.area_outros = request.POST.get('area_outros')
         candidato.save()
-        return render(request, 'cadastro_cv.html')
+        return render(request, 'login.html')
     return render(request, 'cadastro_candidato.html')
 
 
