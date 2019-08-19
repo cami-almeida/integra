@@ -353,6 +353,13 @@ class Curriculo(models.Model):
         ('D', 'Doutorado')
     )
 
+	IDIOMA = (
+		('INGLES', 'INGLÊS'),
+		('ESPANHOL', 'ESPANHOL'),
+		('FRANCES', 'FRANCÊS'),
+		('OTR', 'OUTRO')
+	)
+
 	candidato = models.ForeignKey(
         Candidato, on_delete=None,
 		null=True,
@@ -387,8 +394,16 @@ class Curriculo(models.Model):
 
 	idioma = models.TextField(
 		null= True,
+		choices = IDIOMA,
         verbose_name= "Idioma",
         blank=True
+    )
+
+	idioma_outros = models.CharField(
+        null= True,
+        blank=True,
+        max_length=22,
+        verbose_name = 'Caso outra, qual?'
     )
 
 	historico = models.TextField(
