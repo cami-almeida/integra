@@ -38,7 +38,8 @@ def login(request):
                 contexto = {'msg':'login ou senha incorreto'}
             else:
                 candidatos = Candidato.objects.filter(ativo=True).all()
-                contexto = {'empresa':empresa, 'candidatos': candidatos}
+                curriculos = Curriculo.objects.filter(ativo=True).all()
+                contexto = {'empresa':empresa, 'candidatos': candidatos, 'curriculos':curriculos}
                 return render(request, 'pagina_empresa.html', contexto)
     return render(request, 'login.html',contexto)
 
@@ -106,6 +107,6 @@ def pagina_empresa(request):
 
 # view para retornar informações do candidato
 def informacao_candidato(request, id):
-    candidato = get_object_or_404(Candidato, id=id)
-    contexto = {'candidato':candidato}
+    curriculo = get_object_or_404(Curriculo, id=id)
+    contexto = {'curriculo':curriculo}
     return render(request, 'informacao_candidato.html', contexto)
