@@ -2,27 +2,22 @@
 {% extends 'shared/layout.html' %}
 {% load static %}
 {% block conteudo %}
-<h1>Integra+</h1>
-
 <!--migos aqui é o começo do carrossel-->
 <div class= "carrossel">
 
         <div class= "carousel fade">
             <div class="pageSlc">1 / 3</div>
             <img src="{% static 'image/Carousel1.png' %}" style="width:100%">
-            <div class="texto">Bem Vindo a Integra +</div>
         </div>
 
         <div class= "carousel fade">
             <div class="pageSlc">2 / 3</div>
             <img src= "{% static 'image/Carousel2.png' %}" style="width:100%">
-            <div class="texto">Cadastre aqui o seu curriculo</div>
         </div>
 
         <div class= "carousel fade">
             <div class="pageSlc">3 / 3</div>
             <img src= "{% static 'image/Carousel3.png' %}" style="width:100%">
-            <div class="texto">Inscreva aqui a sua empresa</div>
         </div>
 
     </div>
@@ -30,9 +25,9 @@
     <a class="ant" onclick="plusSlides(-1)">&#10094;</a>
     <a class="prx" onclick="plusSlides(+1)">&#10095;</a>
     </div>
-    <br>
+    
     <!--Aqui são os btn -->
-    <div style="text-align:center"> 
+    <div class="area-btn"> 
         <span class="btn" onclick="slideAtual(1)"></span> 
         <span class="btn" onclick="slideAtual(2)"></span> 
         <span class="btn" onclick="slideAtual(3)"></span> 
@@ -40,12 +35,18 @@
     <!--migos aqui é o final do carrossel-->
     
 </div>
-<div class= 'texto'>
-<h3>Quem somos nós</h3>
-<p>Somos um projeto que integra pessoas estrangeiras em nosso país. Nossa principal missão é criar um espaço em comum entre você trabalhador e você que é empresa, propiciando vinculos empregaticios e integrando os interessados as novas  oportunidades do mercado.
-    Nascemos de um sonho, onde todos aqueles que entram no Brasil tenha um processo de integração regional e nacional claro e falicitador em relação aos processos do mercado, possibilitando o livre acesso ao imigrante.
-    Mas para realizarmos esse sonho precisamos de sua ajuda. Vem com a gente?
-</p>
+
+<div class= 'nos '>
+    <div>
+        <img src="" alt="imagem">
+    </div>
+    <div>
+        <p>Somos um projeto que integra pessoas estrangeiras em nosso país. Nossa principal missão é criar um espaço em comum entre você trabalhador e você que é empresa, propiciando vinculos empregaticios e integrando os interessados as novas  oportunidades do mercado.
+                    Nascemos de um sonho, onde todos aqueles que entram no Brasil tenha um processo de integração regional e nacional claro e falicitador em relação aos processos do mercado, possibilitando o livre acesso ao imigrante.
+                    Mas para realizarmos esse sonho precisamos de sua ajuda. Vem com a gente?
+        </p>
+    </div>
+
 </div>
 
 <div class= 'conteudo'>
