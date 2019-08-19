@@ -39,15 +39,20 @@ a{
 /* Css Layout */
 body{
     margin:0px;
-    background-color: #F0F2F2;
+    /* background-color: #537EFF; */
+    background-image: url('../image/background.jpg');
+    background-size: cover;
     color: #232226;
     display: grid;
     grid-template-areas:'header header header header'
                         'main main main main'
                         'footer footer footer footer';
-    grid-template-rows: 15vh auto 8vh;
+    grid-template-rows: 15vh auto 10vh;
 }
 
+.index{
+    /* background-color: ; */
+}
 .carrossel {
     width: 1350px;
     position: relative;
@@ -157,7 +162,7 @@ footer{
 /* classe para estilizar formulario */
 .area-form{
     width: 60vw;
-    background-color:#d7d9d9;
+    background-color:#424153;
     display:flex;
     flex-direction: column;
     padding:20px;
@@ -173,6 +178,7 @@ footer{
     grid-template-areas: 'usertab emptab'
                          'forms forms';
     grid-template-rows: 50px 300px;
+    height: 75vh;
 
 }
 
@@ -183,10 +189,12 @@ footer{
 
 .opcao_empresa{
     grid-area: emptab;
+    background-color:#424153;    
 }
 
 .opcao_candidato{
     grid-area: usertab;
+    background-color:#424153;
 }
 
 .forms{
@@ -288,10 +296,10 @@ textarea{
 input[type=button],
  input[type=submit],
  input[type=reset]{
-    background-color:#BFB8AA;
+    background-color:#999999;
     border:none;
     border-radius: 0.25rem;
-    color:#232226;
+    color:white ;
     padding: 16px 32px;
     text-decoration: none;
     margin:4px 2px;
@@ -332,4 +340,5 @@ select{
 
 .login label{
     text-align: center;
+    color: white;
 }
