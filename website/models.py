@@ -11,32 +11,6 @@ class Candidato(models.Model):
         ('O','Outro'),
     )
 
-    AREAS = (
-        ('CMC', 'Comunicação'),
-        ('SD', 'Saúde'),
-        ('TEC', 'Tecnologia'),
-        ('FIN', 'Financeiro'),
-        ('ADM', 'Administração'),
-        ('RH', 'RH'),
-        ('JUR', 'Jurídica'),
-        ('OTR', 'Outro')
-    )
-
-    ESCOLARIDADE = (
-        ('EFI', 'Ensino Fundamental Incompleto'),
-        ('EFC', 'Ensino Fundamental Cursando'),
-        ('EFCO', 'Ensino Fundamental Completo'),
-        ('EMI', 'Ensino Médio Incompleto'),
-        ('EMC', 'Ensino Médio Cursando'),
-        ('EMCO', 'Ensino Médio Completo'),
-        ('ESI', 'Ensino Superior Incompleto'),
-        ('ESC', 'Ensino Superior Cursando'),
-        ('ESCO', 'Ensino Superior Completo'),
-        ('P', 'Pós Graduação'),
-        ('M', 'Mestrado'),
-        ('D', 'Doutorado')
-    )
-
     PAIS = (
 	('AFE', 'Afeganistão'),
 	('ADS', 'África do Sul'),
@@ -340,42 +314,104 @@ class Candidato(models.Model):
         verbose_name='Celular',
         null= True
     )
+	
+    data_de_criacao = models.DateField(auto_now=True)
+    ativo = models.BooleanField(default=True)
 
-    apresentacao = models.TextField(
+    def __str__(self):
+        return self.nome + ' ' + self.sobrenome
+
+    def get_absolute_url(self):
+        return reverse('candidatos:candidato', kwargs={'id': self.id})
+
+
+class Curriculo(models.Model):
+
+	AREAS = (
+        ('CMC', 'Comunicação'),
+        ('SD', 'Saúde'),
+        ('TEC', 'Tecnologia'),
+        ('FIN', 'Financeiro'),
+        ('ADM', 'Administração'),
+        ('RH', 'RH'),
+        ('JUR', 'Jurídica'),
+        ('OTR', 'Outro')
+    )
+
+	ESCOLARIDADE = (
+        ('EFI', 'Ensino Fundamental Incompleto'),
+        ('EFC', 'Ensino Fundamental Cursando'),
+        ('EFCO', 'Ensino Fundamental Completo'),
+        ('EMI', 'Ensino Médio Incompleto'),
+        ('EMC', 'Ensino Médio Cursando'),
+        ('EMCO', 'Ensino Médio Completo'),
+        ('ESI', 'Ensino Superior Incompleto'),
+        ('ESC', 'Ensino Superior Cursando'),
+        ('ESCO', 'Ensino Superior Completo'),
+        ('P', 'Pós Graduação'),
+        ('M', 'Mestrado'),
+        ('D', 'Doutorado')
+    )
+
+	IDIOMA = (
+		('INGLES', 'INGLÊS'),
+		('ESPANHOL', 'ESPANHOL'),
+		('FRANCES', 'FRANCÊS'),
+		('OTR', 'OUTRO')
+	)
+
+	candidato = models.ForeignKey(
+        Candidato, on_delete=None,
+		null=True,
+		verbose_name = 'Candidato',
+    )
+
+	apresentacao = models.TextField(
+		verbose_name = 'Apresentação',
         null=True,
         blank=True
     )
 
-    area = models.CharField(
+	area = models.CharField(
         verbose_name = 'Áreas',
         choices = AREAS,
         max_length=255,
         null= True
     )
 
-    area_outros = models.CharField(
+	area_outros = models.CharField(
         null= True,
         blank=True,
         max_length=22,
         verbose_name = 'Caso outra, qual?'
     )
 
-    formacao = models.TextField(
+	formacao = models.TextField(
+		null= True,
         verbose_name="Formação",
         blank=True
     )
 
-    idioma = models.TextField(
+	idioma = models.TextField(
+		null= True,
+		choices = IDIOMA,
         verbose_name= "Idioma",
         blank=True
     )
 
-    historico = models.TextField(
+	idioma_outros = models.CharField(
+        null= True,
+        blank=True,
+        max_length=22,
+        verbose_name = 'Caso outra, qual?'
+    )
+
+	historico = models.TextField(
         verbose_name="Histórico Profissional",
         blank=True
     )
 
-    escolaridade = models.CharField(
+	escolaridade = models.CharField(
         verbose_name = 'Escolaridade',
         choices = ESCOLARIDADE,
         max_length=255,
@@ -384,15 +420,6 @@ class Candidato(models.Model):
 
     # slug = models.SlugField(max_length=100)
 
-    data_de_criacao = models.DateField(auto_now=True)
-    ativo = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.nome + ' ' + self.sobrenome
-
-    def get_absolute_url(self):
-        
-        return reverse('candidatos:candidato', kwargs={'id': self.id})
 
 class Empresa(models.Model):
     razao_social = models.CharField(
