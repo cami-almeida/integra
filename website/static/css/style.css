@@ -1,6 +1,15 @@
 *{
     box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
 }
+
+h1{
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+
 
 /* Css Layout */
 body{
@@ -11,9 +20,14 @@ body{
     grid-template-areas:'header header header header'
                         'main main main main'
                         'footer footer footer footer';
-    grid-template-rows: 5vw auto 8vw;
+    grid-template-rows: 15vh auto 8vh;
 }
 
+header{
+    grid-area:header;
+    background:#bfb8aa;
+
+}
 
 main{
     grid-area: main;
@@ -29,34 +43,6 @@ footer{
 }
 
 /* Fim CSS Layout */
-
-/* .formulario{
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.conteudo {
-    grid-area: conteudo;
-    display: flex;
-    align-items: center;
-}
-
-.texto{
-grid-area: texto;
-display: flex;
-align-items: center;
-}
-
-header{
-    grid-area: header;
-    background-color: #BFB8AA;
-    display: flex;
-} */
-
-
-
-
 /* CSS LOGIN */
 
 .login{
@@ -64,6 +50,7 @@ header{
     grid-template-areas: 'usertab emptab'
                          'forms forms';
     grid-template-rows: 50px 300px;
+
 }
 
 .aba_candidato , .aba_empresa{
@@ -119,4 +106,105 @@ header{
 
 .area_outros{
     display: none;
+}
+
+.area-centro{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* formularios */
+.area-form{
+    width: 60vw;
+    background-color:#d7d9d9;
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom: 3rem;
+}
+
+.area-form div{
+    display:flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+label{
+    font-weight: initial;
+    margin-bottom: 0.5rem;
+
+}
+
+
+
+input[type=text], 
+input[type=email],
+input[type=password],
+select{
+    width:100%;
+    padding:0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom:10px;
+}
+
+
+
+/* estilizando iput buttons */
+input[type=button],
+ input[type=submit],
+ input[type=reset]{
+    background-color:#BFB8AA;
+    border:none;
+    border-radius: 0.25rem;
+    color:#232226;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin:4px 2px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+input[type=button]{
+    width:100%;
+}
+
+.area-btns{
+    display:flex;
+    justify-content: flex-start;
+    margin-top:3rem;
+}
+
+input[type=submit]{
+    width: 100%;
+}
+
+input[type=date]{
+    appearance: listbox;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    color: #495057;
+    width: 50%;
+    padding: 8px 0 ;
+    text-align:right;
+    text-decoration: none;
+    
+
+}
+
+select{
+    background-color:white;
+}
+
+.login label{
+    text-align: center;
 }

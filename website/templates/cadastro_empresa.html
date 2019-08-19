@@ -1,8 +1,10 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
+
+<div class="area-centro">
 <h1>Cadastro Empresa</h1>
 
-    <form class ='Formulario' action="/cadastro_empresa" method="POST">
+    <form class ='area-form' action="/cadastro_empresa" method="POST" autocomplete="off">
     {% csrf_token %}
     <div class="razao_social">
     <label for="razao_social">Razão Social</label>
@@ -22,8 +24,11 @@
     <div class="senha">
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" maxlength="255" minlength="5" required>
-        </div>   
-        <input type="submit" value="Cadastrar">
+    </div> 
 
+    <div>  
+        <input type="submit" value="Cadastrar">
+    </div>
     </form>
+    </div>
 {% endblock %}

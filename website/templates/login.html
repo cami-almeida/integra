@@ -2,44 +2,46 @@
 
 {% block conteudo %}
 <!-- Div para deixar as opções de login com display grid -->
-<div class="login">
+<div class="login area-centro">
     
     <!-- div para quando o usuario clicar tornar o formulario de candidato visivel -->
-    <div class="opcao_candidato">
+    <div class="area-btns">
+    <!-- <div class="opcao_candidato">
         <h2>login candidato</h2>
-    </div>
-
+    </div> -->
+    <input type="button" value="login candidato" class="opcao_candidato">
     <!-- div para quando o usuario clicar tornar o formulario de empresa visivel -->
 
-    <div class="opcao_empresa">
+    <!-- <div class="opcao_empresa">
         <h2>login empresa</h2>    
-    </div>
-
+    </div> -->
+    <input type="button" value="login_empresa" class="opcao_empresa">
     <!-- Div criada para fazer ambos os formularios ocuparem o espaço inferior total da div login -->
-    <div class="forms">
+    </div>
+    <div class="forms ">
 
         <!-- formulario de login do candidato -->
-        <form action = "/login "method = "POST" class="aba_candidato">
+        <form action = "/login "method = "POST" class="aba_candidato area-form" >
             {% csrf_token%}
                 
-            <label> Email </label >
-            <input type="email" name ="email_candidato">
+            <label for="email_candidato"> Email </label >
+            <input type="email" name ="email_candidato" id="email_candidato" required>
                     
-            <label> Senha </label >
-            <input type="password" name="senha">
+            <label for="senha_candidato"> Senha </label >
+            <input type="password" name="senha" id="senha_candidato" required>
 
             <input type="submit" name="submit" value="login_candidato">
         </form >
 
         <!-- formulario de login da empresa -->
-        <form action="/login" method="POST" class="aba_empresa">
+        <form action="/login" method="POST" class="aba_empresa area-form" >
             {% csrf_token%}
 
-            <label> Email </label >
-            <input type="email" name="email_empresa">
+            <label for="email_empresa"> Email </label >
+            <input type="email" name="email_empresa" id="email_empresa" required>
 
-            <label> Senha </label >
-            <input type="password" name="senha">
+            <label for="senha_empresa"> Senha </label >
+            <input type="password" name="senha" id="senha_empresa" required>
 
             <input type="submit" name="submit" value="login_empresa">
         </form>
