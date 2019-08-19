@@ -14,7 +14,7 @@ def login(request):
     # verifica se o metodo é POST
     if request.method == 'POST':
         # verifica se o botão de login clicado pertence ao formulario de usuario
-        if request.POST.get('submit') == 'login_candidato':
+        if request.POST.get('submit') == 'ACESSAR CANDIDATO':
             # pega as informações do candidato apartir dos dados informados no formulario
             email_candidato = request.POST.get('email_candidato')
             senha_candidato = request.POST.get('senha')
@@ -30,7 +30,7 @@ def login(request):
 
 
         # verifica se o botão de login clicado pertence ao formulario de empresa
-        elif request.POST.get('submit') == 'login_empresa':
+        elif request.POST.get('submit') == 'ACESSAR EMPRESA':
             email_empresa = request.POST.get('email_empresa')
             senha_empresa = request.POST.get('senha')
             empresa = Empresa.objects.filter(email=email_empresa).first()
