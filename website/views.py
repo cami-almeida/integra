@@ -37,7 +37,8 @@ def login(request):
             if empresa is None:
                 contexto = {'msg':'login ou senha incorreto'}
             else:
-                contexto = {'empresa':empresa}
+                candidatos = Candidato.objects.filter(ativo=True).all()
+                contexto = {'empresa':empresa, 'candidatos': candidatos}
                 return render(request, 'pagina_empresa.html', contexto)
     return render(request, 'login.html',contexto)
 
