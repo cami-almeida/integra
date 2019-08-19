@@ -22,7 +22,7 @@
 
         <!-- formulario de login do candidato -->
         <form action = "/login "method = "POST" class="aba_candidato area-form" >
-            {% csrf_token%}
+            {% csrf_token %}
                 
             <label for="email_candidato"> Email </label >
             <input type="email" name ="email_candidato" id="email_candidato" required>
@@ -35,7 +35,7 @@
 
         <!-- formulario de login da empresa -->
         <form action="/login" method="POST" class="aba_empresa area-form" >
-            {% csrf_token%}
+            {% csrf_token %}
 
             <label for="email_empresa"> Email </label >
             <input type="email" name="email_empresa" id="email_empresa" required>

@@ -2,10 +2,13 @@
 {% load static%}
 {% block conteudo %}
 <div class="pagina_empresa">
+    
+    {% if empresa is not None %}   
+    
     <div class="carrosel">
-
+        
     </div>
-
+    
 
     <div class="lista_candidatos">
         <!-- for usado para percorrer a lista de candidatos e criaar uma div de usuario para cada candidato existente -->
@@ -38,6 +41,11 @@
         {% endfor %}
     </div>
 
+
+    {% else %}
+    <p>adsadasjsiadfias</p>
+    
+    {% endif %}
 </div>
 
 {% endblock %}
