@@ -36,7 +36,7 @@ function optionCheck(){
 }
 
 
-// emptab.onclick = trocarLogins1
-// usertab.onclick = trocarLogins2
+emptab.onclick = trocarLogins1
+usertab.onclick = trocarLogins2
 
 
