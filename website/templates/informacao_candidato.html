@@ -1,14 +1,38 @@
 {% extends 'shared/layout.html' %}
 
 {% block conteudo %}
+    <div class="area-centro">
+        <div class="area-form">
 
-    <p>Nome: {{candidato.nome}} {{candidato.sobrenome}}</p>
-    <p>Pais de origem: {{candidato.pais_de_origem}}</p>
-    <p>Rne: {{candidato.rne}}</p>
-    <p>Genero: {{candidato.genero}}</p>
-    <p>E-mail: {{candidato.email}}</p>
-    <p>Telefone: {{candidato.telefone}}</p>
-    <p>Celular: {{candidato.celular}}</p>
-    
+                <p>
+                    <label>Nome:</label> 
+                    {{candidato.nome}} {{candidato.sobrenome}}
+                </p>
+                <p>
+                    <label>Pais de origem:</label>
+                    {{candidato.pais_de_origem}}
+                </p>
+                <p>
+                    <label>Rne:</label>
+                     {{candidato.rne}}
+                </p>
+                <p>
+                    <label>Genero:</label> 
+                    {{candidato.genero}}
+                </p>
+                <p>
+                    <label>E-mail</label> 
+                    {{candidato.email}}
+                </p>
+                <p>
+                    <label>Telefone:</label>
+                     {{candidato.telefone}}
+                </p>
+                <p>
+                    <label>Celular</label>
+                     {{candidato.celular}}
+                </p>
+        </div>        
+    </div>
     
 {% endblock %}
