@@ -14,7 +14,7 @@
         <!-- for usado para percorrer a lista de candidatos e criaar uma div de usuario para cada candidato existente -->
         {% for curriculo in curriculos %}
         <div class="bloco_candidato">
-
+            <div>
             <!-- if usado pra dependendo do genero do usuario uma foto diferente sera usada  -->
             {% if candidato.genero == 'F' %}
             <img src="{% static 'image/iconFeminino.png' %}" class="iconeCandidato">
@@ -23,7 +23,7 @@
             {% else %}
             <img src="{% static 'image/iconOutros.png' %}" class="iconeCandidato">
             {% endif %}
-            
+            </div>
             
             <div class="info_candidato">
                 <a href="{{ curriculo.get_absolute_url}}">{{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</a>
