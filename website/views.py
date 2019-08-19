@@ -88,6 +88,7 @@ def cadastro_cv(request):
             curriculo.escolaridade = request.POST.get('escolaridade')
             curriculo.formacao = request.POST.get('formacao')
             curriculo.idioma = request.POST.get('idioma')
+            curriculo.idioma_outros = request.POST.get('idioma_outros')
             curriculo.historico = request.POST.get('historico')
             curriculo.save()
             return redirect('/cadastro_cv')
