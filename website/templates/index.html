@@ -1,7 +1,39 @@
 
 {% extends 'shared/layout.html' %}
+{% load static %}
 {% block conteudo %}
 <h1>Integra+</h1>
+
+<!--migos aqui é o começo do carrossel-->
+<div class= "Carrossel">
+
+        <div class= "Carousel">
+            <div class="Page Slc">1 / 3</div>
+            <img src="{% static 'image/Carousel1.png' %}" style="width:100%">
+            <div class="text">Bem Vindo a Integra +</div>
+        </div>
+
+        <div class= "Carousel">
+            <div class="Page Slc">2 / 3</div>
+            <img src= "{% static 'image/Carousel2.png' %}" style="width:100%">
+            <div class="text">Cadastre aqui o seu curriculo</div>
+        </div>
+
+        <div class= "Carousel">
+            <div class="Page Slc">3 / 3</div>
+            <img src= "{% static 'image/Carousel3.png' %}" style="width:100%">
+            <div class="text">Inscreva aqui a sua empresa</div>
+        </div>
+
+    </div>
+<!--Aqui são os bts -->
+    <div style="text-align:center">
+        <span class="btn" onclick="Carousel(1)"></span> 
+        <span class="btn" onclick="Carousel(2)"></span> 
+        <span class="btn" onclick="Carousel(3)"></span> 
+    </div>
+    <!--migos aqui é o final do carrossel-->
+
 
 <div class= 'texto'>
 <h3>Quem somos nós</h3>
@@ -14,6 +46,5 @@
 <div class= 'conteudo'>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi in, qui adipisci eius velit et rem nisi. Rerum, ab. Recusandae totam unde soluta voluptates perspiciatis, in minima laboriosam illo.</p>
 </div>
-
 
 {% endblock %}
