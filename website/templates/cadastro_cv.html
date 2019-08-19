@@ -10,8 +10,9 @@
         <h1>Preencha aqui seu currículo {{candidato.nome}}</h1>
 <div class="area-form ">
 
-<form action="/atualizar_cv" method="POST">
+<form action="/cadastro_cv" method="POST">
     {% csrf_token %}
+    <input type="hidden" name="email" value="{{candidato.email}}">
     <div class="area">
         <label>Area</label>
         <select name="area" id="opcoesarea" onchange="optionCheck()">
@@ -33,7 +34,7 @@
     </div>
     <div class="apresentacao">
         <label>Apresentacao</label>
-        <input type="text">
+        <input type="text" name="apresentacao">
     </div>
     <div class="escolaridade">
         <label>Nível de Escolaridade</label>
@@ -70,7 +71,7 @@
         <label>Histórico Profissional</label>
         <textarea name="historico" cols="30" rows="10"></textarea>
     </div>
-    <a href="/atualizar_cv/{{candidato.id}}"><input type="button" value="Cadastrar"></a>
+    <input type="submit" value="Cadastrar">
 </div>
 </div>    
 {% endif %}
