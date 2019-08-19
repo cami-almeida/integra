@@ -2,13 +2,16 @@
 
 {% block conteudo %}
 
-    <p>Nome: {{candidato.nome}} {{candidato.sobrenome}}</p>
-    <p>Pais de origem: {{candidato.pais_de_origem}}</p>
-    <p>Rne: {{candidato.rne}}</p>
-    <p>Genero: {{candidato.genero}}</p>
-    <p>E-mail: {{candidato.email}}</p>
-    <p>Telefone: {{candidato.telefone}}</p>
-    <p>Celular: {{candidato.celular}}</p>
-    
-    
+    <p>Nome: {{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</p>
+    <p>Pais de origem: {{curriculo.candidato.pais_de_origem}}</p>
+    <p>Rne: {{curriculo.candidato.rne}}</p>
+    <p>Genero: {{curriculo.candidato.genero}}</p>
+    <p>E-mail: {{curriculo.candidato.email}}</p>
+    <p>Telefone: {{curriculo.candidato.telefone}}</p>
+    <p>Celular: {{curriculo.candidato.celular}}</p>
+    <p>apresentacao: {{curriculo.apresentacao}}</p>
+    <p>area: {{curriculo.area}}</p>
+    <p>formacao: {{curriculo.formacao}}</p>
+    <p>idioma: {{curriculo.idioma}}</p>
+
 {% endblock %}

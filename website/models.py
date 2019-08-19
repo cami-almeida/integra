@@ -321,8 +321,7 @@ class Candidato(models.Model):
     def __str__(self):
         return self.nome + ' ' + self.sobrenome
 
-    def get_absolute_url(self):
-        return reverse('candidatos:candidato', kwargs={'id': self.id})
+    
 
 
 class Curriculo(models.Model):
@@ -403,6 +402,11 @@ class Curriculo(models.Model):
         default='SOME STRING'
     )
 
+	ativo = models.BooleanField(
+		default=True
+	)
+	def get_absolute_url(self):
+		return reverse('curriculos:curriculo', kwargs={'id': self.id})
     # slug = models.SlugField(max_length=100)
 
 

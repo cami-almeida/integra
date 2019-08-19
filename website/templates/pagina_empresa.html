@@ -12,7 +12,7 @@
 
     <div class="lista_candidatos">
         <!-- for usado para percorrer a lista de candidatos e criaar uma div de usuario para cada candidato existente -->
-        {% for candidato in candidatos %}
+        {% for curriculo in curriculos %}
         <div class="bloco_candidato">
 
             <!-- if usado pra dependendo do genero do usuario uma foto diferente sera usada  -->
@@ -26,14 +26,12 @@
             
             
             <div class="info_candidato">
-                <a href="{{ candidato.get_absolute_url}}">{{candidato.nome}} </a>
-                <p>{{candidato.sobrenome}}</p>
-                <p>{{candidato.pais_de_origem}}</p>
-                {% if candidato.apresentacao is not None %}
-                
-                <p>{{candidato.apresentacao}}</p>
+                <a href="{{ curriculo.get_absolute_url}}">{{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</a>
+                <p>{{curriculo.candidato.pais_de_origem}}</p>
+                {% if curriculo.candidato.apresentacao is not None %}
+                <p>{{curriculo.candidato.apresentacao}}</p>
                 {% else %}
-                <p></p>
+                <p>Sem tempo irmão</p>
                 {% endif %}
             </div>
         </div>
