@@ -392,7 +392,7 @@ class Candidato(models.Model):
 
     def get_absolute_url(self):
         
-        return reverse('candid  atos:candidato', kwargs={'id': self.id})
+        return reverse('candidatos:candidato', kwargs={'id': self.id})
 
 class Empresa(models.Model):
     razao_social = models.CharField(

@@ -8,6 +8,7 @@ h1{
     font-weight: 500;
     line-height: 1.2;
     font-size: 2.5rem;
+    
 }
 
 a{
@@ -17,12 +18,22 @@ a{
 
 .logo{
     width: 200px;
-    height: 93px;
-    background-color:#473c38;
+    height: 5rem;
     text-align:center;
     padding:30px;
-    color:#fbe1b3;
     cursor: pointer;
+    background-image: url("../image/integralogo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-style: none;
+    border-radius: 0.7rem;
+    margin-top:2.5px;
+}
+
+.logo h2{
+    display: none;
+    color:#fbe1b3;
 }
 /* Css Layout */
 body{
@@ -41,6 +52,7 @@ header{
     background:#bfb8aa;
     display:flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 main{
@@ -57,6 +69,19 @@ footer{
 }
 
 /* Fim CSS Layout */
+
+/* classe para estilizar formulario */
+.area-form{
+    width: 60vw;
+    background-color:#d7d9d9;
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom: 3rem;
+}
+
+
 /* CSS LOGIN */
 
 .login{
@@ -130,7 +155,7 @@ footer{
 }
 
 /* formularios */
-.area-form{
+/* .area-form{
     width: 60vw;
     background-color:#d7d9d9;
     display:flex;
@@ -138,7 +163,7 @@ footer{
     padding:20px;
     border-radius:10px;
     margin-bottom: 3rem;
-}
+} */
 
 .area-form div{
     display:flex;
@@ -159,7 +184,9 @@ label{
 input[type=text], 
 input[type=email],
 input[type=password],
-select{
+input[type=tel],
+select,
+textarea{
     width:100%;
     padding:0.375rem 0.75rem;
     border: 1px solid #ced4da;
