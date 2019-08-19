@@ -6,7 +6,9 @@
         <a href="/">clique aqui para se cadastrar</a>
     </p>
 {% else %}
-<h1>Preencha aqui seu currículo {{candidato.nome}}</h1>
+<div class="area-centro">
+        <h1>Preencha aqui seu currículo {{candidato.nome}}</h1>
+<div class="area-form ">
 
 <form action="/atualizar_cv" method="POST">
     {% csrf_token %}
@@ -55,13 +57,21 @@
         <textarea name="formacao" cols="30" rows="10"></textarea>
     </div>
     <div class="idioma">
-        <label>Idiomas</label>
-        <textarea name="idioma" cols="30" rows="10"></textarea>
+        <label for="idiomas">Idiomas</label>
+            <select name="" id="INGLES">Ingles</option>
+                <option value="ESPANHOL">Espanhol</option>
+                <option value="FRANCES">Frances</option>
+                <option value="">Outros</option>
+            </select>
+        <input type="text" name="" id="idioma-outros" placeholder="digite outro idioma">    
+        
     </div>
     <div class="historico">
         <label>Histórico Profissional</label>
         <textarea name="historico" cols="30" rows="10"></textarea>
     </div>
     <a href="/atualizar_cv/{{candidato.id}}"><input type="button" value="Cadastrar"></a>
+</div>
+</div>    
 {% endif %}
 {% endblock %}
