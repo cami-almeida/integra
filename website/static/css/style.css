@@ -167,9 +167,23 @@ footer{
     background-color:#0F2A4F;
     display: flex;
     align-items: center;
+    justify-content: center;    
+}
+.autorais{
+    color:white;
 }
 
+.midias{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 22rem;
+    color: white;
+}
 
+.midias p{
+    margin-right: 10px;
+}
 .icons{
     height: 250px;
     width: 100%;
