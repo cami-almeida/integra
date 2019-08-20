@@ -2,18 +2,18 @@
 {% block conteudo %}
 
 <div class="area-centro">
-<h1>Cadastro Empresa</h1>
+<h1>CADASTRO DE EMPRESA</h1>
 
     <form class ='area-form' action="/cadastro_empresa" method="POST" autocomplete="off">
     {% csrf_token %}
     <div class="razao_social">
     <label for="razao_social">Razão Social</label>
-    <input type="text" name="razao_social" id="razao_social" required>
+    <input type="text" name="razao_social" id="razao_social" required placeholder="Digite a razão social">
     </div>
 
     <div class="cnpj">
         <label for="cnpj">CNPJ</label>
-        <input type="text" name="cnpj" maxlength="12" required id="cnpj">
+        <input type="text" name="cnpj" maxlength="12" required id="cnpj" placeholder="Digite o CNPJ">
     </div>
 
     <div class="email">
@@ -23,7 +23,7 @@
 
     <div class="senha">
         <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" maxlength="255" minlength="5" required>
+        <input type="password" name="senha" id="senha" maxlength="255" minlength="5" required placeholder="***********">
     </div> 
 
     <div>  

@@ -31,7 +31,7 @@
                 {% if curriculo.candidato.apresentacao is not None %}
                 <p>{{curriculo.candidato.apresentacao}}</p>
                 {% else %}
-                <p>Sem tempo irmão</p>
+                <p>Não possui CV cadastrado</p>
                 {% endif %}
             </div>
         </div>
@@ -41,7 +41,8 @@
 
 
     {% else %}
-    <p>adsadasjsiadfias</p>
+    <p>É necessário se cadastrar para acessar essa pagina</p>
+    <p><a href="cadastro_empresa">Clique aqui</a> para se cadastrar</p>
     
     {% endif %}
 </div>

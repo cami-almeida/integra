@@ -1,24 +1,24 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
 <div class="area-centro">
-<h1>Preencha aqui seu cadastro</h1>
+<h1>CADASTRO DE CANDIDATO</h1>
 
 <form  class="area-form "action="/cadastro_candidato" method="POST" autocomplete="off">
     {% csrf_token %}
     
     <div class="Nome" >
     <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" required placeholder="digite seu nome">
+    <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
     </div>
     
     <div class="Sobrenome">
         <label for="sobrenome" >Sobrenome</label>
-        <input type="text" name="sobrenome" id="sobrenome" required placeholder="digite seu sobre nome">
+        <input type="text" name="sobrenome" id="sobrenome" required placeholder="Digite seu sobrenome">
     </div>
     
     <div class="rne">
         <label for="rne">RNE</label>
-        <input type="text" name="rne" id="rne">
+        <input type="text" name="rne" id="rne" placeholder="Digite seu Registro Nacional de Estrangeiros">
     </div>
     
     <div class="data_nascimento">
@@ -298,7 +298,7 @@
 
     <div class="senha">
         <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" placeholder="***********" required>
+        <input type="password" name="senha" id="senha" maxlength="255" minlength="5" placeholder="***********" required>
     </div> 
 
     <div class="telefone">

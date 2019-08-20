@@ -9,8 +9,9 @@
 }
 
 .bt{
-   margin-left:10px;
-    display:inline-block;
+    display:flex;
+    justify-content: space-around;
+    width: 80%
 
 }
 a{
@@ -303,6 +304,8 @@ footer{
     
 }
 
+
+
 .area-form p{
     width:100%;
     padding:0.375rem 0.75rem;
@@ -390,11 +393,24 @@ select{
     background-color:white;
 }
 
-.area_outros{
-    display: none;
-}
-
 .login label{
     text-align: center;
     color: white;
+    
+}
+/* apresentação cv */
+.area-foto{
+    background-color:white;
+    width: 9rem;
+    border-radius: 12%;
+    
+}
+
+
+.area-form .area_outros{
+    display: none ;
+}
+
+.area-form .idioma_outros{
+    display: none;
 }
