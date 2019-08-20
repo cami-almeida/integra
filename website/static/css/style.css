@@ -164,10 +164,10 @@ main{
     display: flex;
     /* justify-content: space-around; */
 }
-.entrevista{
+/* .entrevista{ */
     /* margin-left:670px; */
     /* margin-top:-303px; */
-}
+/* } */
 footer{
     grid-area: footer;
     background-color:#0F2A4F;
