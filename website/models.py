@@ -119,6 +119,7 @@ class Candidato(models.Model):
 	('IMA', 'Ilhas Malvinas'),
 	('IMAR','Ilhas Marshall'),
 	('IMDEU', 'Ilhas Menores Distantes dos Estados Unidos'),
+	('IRAQ','Iraque'),
 	('IS','Ilhas Salomão'),
 	('IVA','Ilhas Virgens Americanas'),
 	('IVB','Ilhas Virgens Britânicas'),
@@ -126,7 +127,6 @@ class Candidato(models.Model):
 	('INDO','Indonésia'),
 	('ING','Inglaterra'),
 	('INDI','Índia'),
-	('IRAQ','Iraque'),
 	('IRN','Irlanda do Norte'),
 	('IRL','Irlanda'),
 	('IRA','Irã'),
@@ -321,6 +321,9 @@ class Candidato(models.Model):
     def __str__(self):
         return self.nome + ' ' + self.sobrenome
 
+	# def pais_verbose(self)
+		# return dict(Scoop.PAIS)[self.pais_de_origem]
+
     
 
 
@@ -353,10 +356,10 @@ class Curriculo(models.Model):
     )
 
 	IDIOMA = (
-		('INGLES', 'INGLÊS'),
-		('ESPANHOL', 'ESPANHOL'),
-		('FRANCES', 'FRANCÊS'),
-		('OTR', 'OUTRO')
+		('INGLES', 'Inglês'),
+		('ESPANHOL', 'Espanhol'),
+		('FRANCES', 'Francês'),
+		('OTR', 'Outro')
 	)
 
 	candidato = models.ForeignKey(
@@ -424,6 +427,8 @@ class Curriculo(models.Model):
 		return reverse('curriculos:curriculo', kwargs={'id': self.id})
     # slug = models.SlugField(max_length=100)
 
+	def __str__(self):
+		return 'Curriculo de '
 
 class Empresa(models.Model):
     razao_social = models.CharField(
