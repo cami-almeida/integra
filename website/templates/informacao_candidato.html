@@ -1,10 +1,19 @@
 {% extends 'shared/layout.html' %}
-
+{% load static%}
 {% block conteudo %}
     <div class="area-centro">
         <h1> {{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</h1>
         <div class="area-form">
-
+            <div class="area-foto">
+                        <!-- if usado pra dependendo do genero do usuario uma foto diferente sera usada  -->
+                        {% if curriculo.candidato.genero == 'F' %}
+                        <img src="{% static 'image/iconFeminino.png' %}" class="iconeCandidato">
+                        {% elif curriculo.candidato.genero == 'M' %}
+                        <img src="{% static 'image/iconMasculino.png' %}" class="iconeCandidato">
+                        {% else %}
+                        <img src="{% static 'image/iconOutros.png' %}" class="iconeCandidato">
+                        {% endif %}
+            </div>   
             <hr>
         <p class="campo-info">
             <label>Pais de origem:</label>

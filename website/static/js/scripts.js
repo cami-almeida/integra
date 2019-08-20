@@ -4,6 +4,7 @@ let loginuser = document.querySelector('.aba_candidato');
 let loginemp = document.querySelector('.aba_empresa');
 let cadarea = document.querySelector('.area')
 let cadoutrarea = document.querySelector('.area_outros')
+let idiomaarea = document.querySelector('.idioma_outros')
 
 
 // função para que ao usuario clicar na div opcao_candidato o formulario correspondente ficar visivel
@@ -26,7 +27,7 @@ function trocarLogins1(){
 
 
 function optionCheck(){
-    var option = document.getElementById("opcoesarea").value;
+    let option = document.getElementById("opcoesarea").value;
     if(option == "OTR"){
         cadoutrarea.style.display = 'block';
     }
@@ -34,6 +35,19 @@ function optionCheck(){
         cadoutrarea.style.display = 'none';
     }
 }
+
+
+
+function optionCheckIdiomas(){
+    let option2 = document.getElementById("opcao_idioma").value;
+    if(option2 == "OTR"){
+        idiomaarea.style.display = 'block';
+    }
+    else{
+        idiomaarea.style.display = 'none';
+    }
+}
+
 
 
 emptab.onclick = trocarLogins1
