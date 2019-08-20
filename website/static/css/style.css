@@ -14,8 +14,6 @@ h1{
 
 .logo{
     display: flex;
-    margin-left: 500px; 
-    margin-bottom: 40px;   
 }
 
 .bt{
@@ -132,6 +130,7 @@ header{
     grid-area:header;
     background:#0F2A4F;
     display:flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
