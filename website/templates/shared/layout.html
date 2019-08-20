@@ -10,19 +10,22 @@
     <script  defer src="{% static 'js/carrossel.js' %}"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Chivo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme&display=swap" rel="stylesheet">
 </head>
 <body>
+   
 <header>
-    <div class="logo" >
-        <h2>integra +</h2>
+    <div class="logo">
+        <img src="{% static 'image/logo.png' %}"height="80" width="180">
     </div>
+<div class="bt">
     <div>
-
         <a href="/login">LOGIN</a>
         <a href="/cadastro_candidato">SOU CANDIDATO</a>
         <a href="/cadastro_empresa">SOU EMPRESA</a>
-
     </div>
+</div>
+
 </header>
     <main>
         {% block conteudo %}
