@@ -14,19 +14,29 @@
                         <img src="{% static 'image/iconOutros.png' %}" class="iconeCandidato">
                         {% endif %}
             </div>   
-            <hr>
+            
+            
+
+            
         <p class="campo-info">
             <label>Pais de origem:</label>
-             {{curriculo.candidato.pais_de_origem}}
+             {{curriculo.candidato.get_pais_de_origem_display}}
         </p>
         <p>Rne: {{curriculo.candidato.rne}}</p>
-        <p>Genero: {{curriculo.candidato.genero}}</p>
+        <p>Gênero: {{curriculo.candidato.get_genero_display}}</p>
         <p>E-mail: {{curriculo.candidato.email}}</p>
+        <p>Experiência: {{curriculo.candidato.historico}}</p>
         <p>Telefone: {{curriculo.candidato.telefone}}</p>
         <p>Celular: {{curriculo.candidato.celular}}</p>
-        <p>apresentacao: {{curriculo.apresentacao}}</p>
-        <p>area: {{curriculo.area}}</p>
-        <p>formacao: {{curriculo.formacao}}</p>
-        <p>idioma: {{curriculo.idioma}}</p>
+        <p>Apresentação: {{curriculo.apresentacao}}</p>
+        {% if curriculo.area == "OTR" %}
+        <p>Área: {{curriculo.area_outros}}</p>
+        {% else %}
+        <p>Área: {{curriculo.get_area_display}}</p>
+        {% endif %}
+        <p>Formação: {{curriculo.formacao}}</p>
+        <p>Idioma: {{curriculo.get_idioma_display}}</p>
+        <p>Outros Idiomas: {{curriculo.idioma_outros}}</p>
+        <p>Histórico Profissional: {{candidato.historico}}</p>
 
 {% endblock %}

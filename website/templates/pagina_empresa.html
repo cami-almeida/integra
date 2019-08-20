@@ -28,8 +28,8 @@
             <div class="info_candidato">
                 <a href="{{ curriculo.get_absolute_url}}">{{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</a>
                 <p>{{curriculo.candidato.pais_de_origem}}</p>
-                {% if curriculo.candidato.apresentacao is not None %}
-                <p>{{curriculo.candidato.apresentacao}}</p>
+                {% if curriculo.apresentacao is not None %}
+                <p>{{curriculo.apresentacao}}</p>
                 {% else %}
                 <p>Não possui CV cadastrado</p>
                 {% endif %}
