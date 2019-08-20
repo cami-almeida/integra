@@ -1,3 +1,4 @@
+
 let slideIndex = 1;
 let indice = 1;
 
@@ -23,5 +24,23 @@ function mostrarSlides(n){
     }
     slides[indice-1].style.display = "block";
     btn[indice-1].className += " active";
+    
 }
 mostrarSlides(indice);
+
+
+let slideIndex2 = 0;
+showSlides();
+
+function showSlides() {
+  let j;
+  let slides2 = document.getElementsByClassName("carousel");
+  for (j = 0; j < slides2.length; j++) {
+    slides2[j].style.display = "none"; 
+  }
+  slideIndex2++;
+  if (slideIndex2 > slides2.length) {slideIndex2 = 1} 
+  slides2[slideIndex2-1].style.display = "block"; 
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
