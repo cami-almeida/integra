@@ -33,7 +33,7 @@ def login(request):
         elif request.POST.get('submit') == 'ACESSAR EMPRESA':
             email_empresa = request.POST.get('email_empresa')
             senha_empresa = request.POST.get('senha')
-            empresa = Empresa.objects.filter(email=email_empresa).first()
+            empresa = Empresa.objects.filter(email=email_empresa, senha=senha_empresa).first()
             if empresa is None:
                 contexto = {'msg':'login ou senha incorreto'}
             else:
