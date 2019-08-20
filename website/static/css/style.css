@@ -278,6 +278,20 @@ footer{
     
 }
 
+.area-form p{
+    width:100%;
+    padding:0.375rem 0.75rem;
+    background-color:white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom:10px;
+
+}
+
 label{
     font-weight: initial;
     margin-bottom: 0.5rem;
