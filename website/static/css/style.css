@@ -223,6 +223,13 @@ footer{
     color: white;
 }
 
+.area-nome{
+    display:flex !important;
+    flex-direction: row !important;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
 /* CSS LOGIN */
 
 .login{

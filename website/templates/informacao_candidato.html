@@ -2,8 +2,9 @@
 {% load static%}
 {% block conteudo %}
     <div class="area-centro">
-        <h1> {{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</h1>
+        
         <div class="area-form">
+            <div class="area-nome">
             <div class="area-foto">
                         <!-- if usado pra dependendo do genero do usuario uma foto diferente sera usada  -->
                         {% if curriculo.candidato.genero == 'F' %}
@@ -13,19 +14,22 @@
                         {% else %}
                         <img src="{% static 'image/iconOutros.png' %}" class="iconeCandidato">
                         {% endif %}
-            </div>   
-            
-            
+            </div>
+            <div>
+
+               
+            <h1> {{curriculo.candidato.nome}} {{curriculo.candidato.sobrenome}}</h1>
+            </div>
+        </div>
 
             
         <p class="campo-info">
-            <label>Pais de origem:</label>
+            Pais de origem:
              {{curriculo.candidato.get_pais_de_origem_display}}
         </p>
         <p>Rne: {{curriculo.candidato.rne}}</p>
         <p>Gênero: {{curriculo.candidato.get_genero_display}}</p>
         <p>E-mail: {{curriculo.candidato.email}}</p>
-        <p>Experiência: {{curriculo.candidato.historico}}</p>
         <p>Telefone: {{curriculo.candidato.telefone}}</p>
         <p>Celular: {{curriculo.candidato.celular}}</p>
         <p>Apresentação: {{curriculo.apresentacao}}</p>
